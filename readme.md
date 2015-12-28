@@ -9,4 +9,4 @@ By Binhle
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
 
-## Version 1.1
+## Version 1.2
