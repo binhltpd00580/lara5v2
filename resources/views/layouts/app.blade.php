@@ -39,24 +39,24 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <!-- Branding Image -->
+{{--                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ URL('/') }}">
                     Laravel
-                </a>
+                </a> --}}
             </div>
 
             <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ URL('/') }}">Home</a></li>
+                    <li><a href="{{ URL('/') }}">LTB Admin</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ URL('/login') }}">Login</a></li>
-                        <li><a href="{{ URL('/register') }}">Register</a></li>
+                        <li><a href="{{ URL('admin/login') }}">Login</a></li>
+                        <li><a href="{{ URL('admin/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -64,7 +64,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ URL('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ URL('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                     @endif
                 </ul>

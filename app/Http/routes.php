@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +24,21 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+
+	Route::get('/', 'FrontendController@index');
+
 });
 
-Route::group(['middleware' => 'web'], function () {
+Route::group(['middleware' => 'web', 'prefix' => 'admin' ], function () {
 	
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/dashboard', 'ArticleController@index');
+    Route::get('create', 'ArticleController@create');
+	Route::post('create', 'ArticleController@store');
+	Route::get('edit/{id}', 'ArticleController@edit');
+	Route::put('edit/{id}', 'ArticleController@update');
+	Route::delete('delete/{id}', 'ArticleController@destroy');
+	Route::get('{slug}', 'ArticleController@show');
+	
 });
